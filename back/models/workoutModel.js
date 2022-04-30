@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 
 const { ObjectId } = mongoose.Schema
-console.log(ObjectId);
 
 const workoutSchema = mongoose.Schema(
   {
@@ -17,12 +16,12 @@ const workoutSchema = mongoose.Schema(
       },
     ],
   },
-  {
+  { 
     minimize: false,
     timestamps: true,
   }
 )
 
-const Workout = mongoose.model('Workout', workoutSchema)
+const Workout =  mongoose.models.Workout || mongoose.model('Workout', workoutSchema)
 
 export default Workout

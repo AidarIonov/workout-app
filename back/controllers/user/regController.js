@@ -15,7 +15,6 @@ export const registerUser = asyncHandler(async(req, res) => {
     throw new Error("Данный пользователь уже зарегистрирован");
   };
 
-  
   const user = await User.create({
     email,
     password
