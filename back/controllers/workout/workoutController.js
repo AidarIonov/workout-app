@@ -23,6 +23,8 @@ export const getWorkout = asyncHandler(async (req, res) => {
   const workout = await Workout.findById(req.params.id)
         .populate('exercises')
         .lean();
+
+
   const minutes = Math.ceil(workout.exercises.length * 3.7);
 
   res.json({...workout, minutes});

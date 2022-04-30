@@ -16,7 +16,7 @@ const workoutLogSchema = mongoose.Schema(
     },
     completed: {
       type: Boolean,
-      default: false
+      default: true
     }
   },
   {
@@ -25,6 +25,6 @@ const workoutLogSchema = mongoose.Schema(
   }
 );
 
-const WorkoutLog = mongoose.model('Workout', workoutLogSchema);
+const WorkoutLog = mongoose.model('WorkoutLog', workoutLogSchema);
 
 export default WorkoutLog;
