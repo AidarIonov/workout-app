@@ -1,8 +1,12 @@
 import Home from './components/pages/home/Home';
-import Layout from './components/common/Layout';
+import { Route, Routes } from 'react-router-dom';
+import NewWorkout from './components/pages/newWorkout/NewWorkout';
 const App = () => {
   return (
-      <Home/>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/new' element={<NewWorkout/>}/>
+    </Routes>
   );
 };
 

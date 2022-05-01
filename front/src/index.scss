@@ -37,6 +37,15 @@
 	opacity: 1;
 }
 
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 html,
 body {
 	height: 100%;
@@ -44,6 +53,8 @@ body {
 
 body {
 	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
   width: 100vw;
   min-height: 100%;
 	position: relative;

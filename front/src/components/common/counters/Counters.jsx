@@ -11,7 +11,7 @@ const Counters = () => {
   return (
     <div className={styles.wrapper}>
       {counters.map(item => (
-        <div className={styles.count}>
+        <div key={item.type} className={styles.count}>
           <span>{item.type}</span>
           <p>{item.count}</p>
         </div>
