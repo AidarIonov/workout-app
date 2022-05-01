@@ -2,6 +2,11 @@
 
 .header {
 	@include flex(center, space-between);
+	padding: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 	> .btn {
 		background-color: transparent;
 		border: none;

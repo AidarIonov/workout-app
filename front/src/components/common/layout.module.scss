@@ -1,12 +1,13 @@
 @use '../../scss/' as *;
 
 .wrapper {
-  @include flex($justify: space-between);
-  flex-direction: column;
-  padding: 30px;
   max-width: 500px;
+  border-radius: 30px;
   width: 100%;
   position: absolute;
+  height: 100%;
   left: 50%;
   transform: translate(-50%);
+  background-size: cover;
+  background-position: center center;
 }

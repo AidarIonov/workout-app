@@ -1,0 +1,23 @@
+@use '../../../scss/' as *;
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  padding: 0 15px 100px;
+}
+
+.footer {
+  align-self: end;
+  @include flex(center, space-between);
+  flex-direction: column;
+  gap: 35px;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 130.19%;
+}
+
+
