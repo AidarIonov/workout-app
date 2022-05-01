@@ -18,7 +18,7 @@ export const getExerciseLog = asyncHandler(async (req, res) => {
   const prevExerciseLogs = await ExerciseLog.find({
     user: req.user._id,
     exercise: exerciseLog._id,
-  }).sort('desc')
+  }).sort({createdAt: 'desc'})
 
   const prevExLog = prevExerciseLogs[0]
 
@@ -29,5 +29,24 @@ export const getExerciseLog = asyncHandler(async (req, res) => {
   res.json({
     ...exerciseLog,
     times: newTimes,
-  })
+  });
+});
+
+
+// @desc    Get logs of exercise
+// @route   GET /api/exercises/log
+// @access  Private
+export const getExerciseLogList = asyncHandler(async (req, res) => {
+	const exerciseLogs = await ExerciseLog.find({
+		user: req.user._id,
+		completed: true,
+	})
+		.populate('exercise', 'name image')
+		.select('exercise createdAt')
+		.lean();
+
+	if (!exerciseLogs) {
+		res.status(404)
+		throw new Error('Логи не найдены!')
+	} else res.json(exerciseLogs)
 })

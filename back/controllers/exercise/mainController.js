@@ -32,7 +32,7 @@ export const updateExercise = asyncHandler(async (req, res) => {
 
   exercise.name = name
   exercise.times = times
-  exercise.imageId = imageIndex
+  exercise.image = imageIndex
 
   const updatedExercise = await exercise.save()
 
