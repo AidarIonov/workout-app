@@ -9,8 +9,8 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import userRoutes from './routes/userRoutes.js';
 import exerciseRoutes from './routes/exerciseRoutes.js'
 import workoutRoutes from './routes/workoutRoutes.js'
-
 const app = express();
+
 dotenv.config();
 
 connectDB()
