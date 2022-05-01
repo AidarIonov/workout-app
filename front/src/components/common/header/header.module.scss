@@ -1,0 +1,11 @@
+@use '../../../scss/' as *;
+
+.header {
+	@include flex(center, space-between);
+	> .btn {
+		background-color: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
+	}
+}
