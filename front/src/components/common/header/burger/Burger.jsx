@@ -5,20 +5,26 @@ import burgerCloseImage from '../../../../images/header/hamburger-close.svg'
 
 import styles from './burger.module.scss';
 import { menu } from './menuBase';
+import { useOutsideAlerter } from '../../../../hooks/useOutsideAlerter';
+import { useAuth } from '../../../../hooks/useAuth';
 const Burger = () => {
-  const [active, setActive] = useState(false);
+  const {setIsAuth} = useAuth()
 
-  const handleLogout = e => {
-    e.preventDefault();
-    console.log('logout');
+  const {ref, isComponentVisible, setIsComponentVisible} =useOutsideAlerter(false);
+  const {isAuth} = useAuth();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsAuth(false)
+    setIsComponentVisible(false)
   }
 
   return (
-    <div className={styles.wrapper}>
-    <button onClick={() => setActive(!active)} className={styles.btn} type='button'>
-        <img src={active ? burgerCloseImage : burgerImage} alt="Auth" />
+    <div className={styles.wrapper} ref={ref}>
+    <button onClick={() => setIsComponentVisible(!isComponentVisible)} className={styles.btn} type='button'>
+        <img src={isComponentVisible ? burgerCloseImage : burgerImage} alt="Auth" />
     </button>
-    <nav className={active ? `${styles.menu} ${styles.show}` : styles.menu}>
+    <nav className={isComponentVisible ? `${styles.menu} ${styles.show}` : styles.menu}>
       <ul>
         {menu.map(item => (
           <li key={item.display}>
@@ -26,7 +32,7 @@ const Burger = () => {
         </li>
         ))}
         <li>
-          <a onClick={handleLogout} href='#'>Logout</a>
+          <a onClick={handleLogout} href='#'>{isAuth ? 'Logo ut' : 'Login'}</a>
         </li>
       </ul>
     </nav>

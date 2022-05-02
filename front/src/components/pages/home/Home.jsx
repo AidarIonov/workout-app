@@ -4,12 +4,14 @@ import Button from '../../ui/button/Button';
 import Layout from '../../common/Layout';
 import styles from './home.module.scss';
 import Counters from '../../common/counters/Counters';
+import { useAuth } from '../../../hooks/useAuth';
 const Home = () => {
+  const {isAuth} = useAuth()
   return (
     <Layout height={0}>
     <div style={{backgroundImage: `url(${bg})`}} className={styles.wrapper}>
     <div className={styles.footer}>
-      <Link to='/new-workout'>
+      <Link to={isAuth ? '/new-workout' : '/auth'}>
     <Button>
       New
     </Button>

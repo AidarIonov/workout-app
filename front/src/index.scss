@@ -65,6 +65,11 @@ body {
   color: #fff;
 }
 
+.error-wrapper {
+	@include flex(center, center);
+	flex-direction: column;
+}
+
 #root {
   height: 100%;
 }

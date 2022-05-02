@@ -1,7 +1,10 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../hooks/useAuth';
 
 import userImage from '../../../images/header/user.svg'
 import arrowImage from '../../../images/header/arrow.svg'
+import authImage from '../../../images/header/dumbbell.svg';
+
 
 import styles from './header.module.scss'
 import Burger from './burger/Burger'
@@ -9,6 +12,7 @@ const Header = props => {
   const {pathname} = useLocation();
   const navigate = useNavigate()
 
+  const {isAuth} = useAuth();
 
   return (
     <header className={styles.header}>
@@ -17,8 +21,8 @@ const Header = props => {
           <img src={arrowImage} alt="Auth" />
         </button>
       ) : (
-        <button onClick={() => navigate('/auth')} className={styles.btn} type="button">
-          <img src={userImage} alt="Auth" />
+        <button onClick={() => navigate(isAuth ? '/profile' : '/auth')} className={styles.btn} type="button">
+          <img src={isAuth ? authImage : userImage} alt="Auth" height='40' />
         </button>
       )}
       <Burger />
