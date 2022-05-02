@@ -5,7 +5,7 @@ export const menu = [
   },
   {
     display: 'Create-new',
-    path: '/new'
+    path: '/new-workout'
   },
   {
     display: 'Profile',

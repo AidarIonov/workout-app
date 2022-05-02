@@ -1,0 +1,21 @@
+@use '../../../scss/' as *;
+
+.input {
+  width: 100%;
+  background-color: $purple;
+  border: 1px solid transparent;
+  outline: none;
+  padding: 15px;
+  line-height: 19px;
+  color: $white;
+  border-radius: 10px;
+  transition: $transition;
+  &:focus {
+    border: 1px solid $accent;
+  }
+  &::placeholder {
+    font-size: 16px;
+    line-height: 19px;
+    color: #946e86;
+  }
+}

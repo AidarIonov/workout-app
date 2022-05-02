@@ -6,10 +6,10 @@ import styles from './home.module.scss';
 import Counters from '../../common/counters/Counters';
 const Home = () => {
   return (
-    <Layout background={bg}>
-    <div className={styles.wrapper}>
+    <Layout height={0}>
+    <div style={{backgroundImage: `url(${bg})`}} className={styles.wrapper}>
     <div className={styles.footer}>
-      <Link to='/new'>
+      <Link to='/new-workout'>
     <Button>
       New
     </Button>
