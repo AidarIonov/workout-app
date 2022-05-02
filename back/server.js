@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import colors from 'colors';
@@ -9,7 +10,9 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import userRoutes from './routes/userRoutes.js';
 import exerciseRoutes from './routes/exerciseRoutes.js'
 import workoutRoutes from './routes/workoutRoutes.js'
+
 const app = express();
+app.use(cors());
 
 dotenv.config();
 

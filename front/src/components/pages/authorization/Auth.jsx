@@ -1,12 +1,15 @@
 import { useState } from 'react';
+import { useMutation } from 'react-query';
 import Layout from '../../common/Layout';
 
 import bg from '../../../images/new-exercise.jpg'
 import Field from '../../ui/field/Field';
 import Button from '../../ui/button/Button';
+import Loader from '../../ui/loader/Loader';
+import Alert from '../../ui/alert/Alert';
 
 import styles from './auth.module.scss';
-import Alert from '../../ui/alert/Alert';
+import { _api } from '../../../api/axios';
 
 const Auth = () => {
   const [field, setField] = useState({
@@ -14,6 +17,26 @@ const Auth = () => {
     password: ''
   });
   const [type, setType] = useState('auth');
+  const mut = useMutation();
+  console.log(mut);
+
+  const {mutate: register, isLoading, error, isSuccess} = useMutation('Registration',
+  () => 
+    _api({
+      url: '/users',
+      type: 'POST',
+      body: {
+        email: field.email,
+        password: field.password
+      },
+      auth: false
+    }),
+    {
+      onSuccess(data) {
+        localStorage.setItem('token', data.token);
+      }
+    }
+  );
 
   const handleChange = e => {
     setField(prev => ({...prev, [e.target.name]: e.target.value}))
@@ -24,7 +47,7 @@ const Auth = () => {
     if(type === 'auth') {
       console.log('auth');
     }else {
-      console.log('sign-in');
+      register();
     }
     setField({email: '', password: ''})
   }
@@ -34,7 +57,9 @@ const Auth = () => {
             background={bg}
             title={'Sign in | Sign up'}>
       <form onSubmit={handleAuth} className={styles.form}>
-              {true && <Alert>Success</Alert>}
+              {error && <Alert type='error'>{error}</Alert>}
+              {isSuccess && <Alert type='success'>You have successfully signed up</Alert>}
+              {isLoading && <Loader/>}
         <Field 
               type='email'
               name={'email'}
@@ -50,10 +75,10 @@ const Auth = () => {
               onChange={handleChange}
               required/>
           <div className={styles.btns}>
-          <Button onClick={() => setType('sign-in')} className={styles.btn}>
+          <Button onClick={() => setType('auth')} className={styles.btn}>
             Sign in
           </Button>
-          <Button onClick={() => setType('auth')} className={styles.btn}>
+          <Button onClick={() => setType('register')} className={styles.btn}>
             Sing up
           </Button>
           </div>
