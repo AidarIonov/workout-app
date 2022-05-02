@@ -1,0 +1,30 @@
+.alert {
+  width: 100%;
+  background-color: #5BE7C4;
+  color: #222;
+  margin-bottom: 1rem;
+  animation: fade .4s opacity;
+  padding: 10px;
+  border-radius: 10px;
+  &.error {
+    background-color: #FF2E63;
+    color: #fff;
+  }
+  &.info {
+    background-color: #50C1E9;
+  }
+  &.warning {
+    background-color: #F75940;
+    color: #fff;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

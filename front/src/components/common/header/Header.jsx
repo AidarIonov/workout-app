@@ -17,7 +17,7 @@ const Header = props => {
           <img src={arrowImage} alt="Auth" />
         </button>
       ) : (
-        <button className={styles.btn} type="button">
+        <button onClick={() => navigate('/auth')} className={styles.btn} type="button">
           <img src={userImage} alt="Auth" />
         </button>
       )}

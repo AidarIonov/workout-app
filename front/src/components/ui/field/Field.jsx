@@ -4,6 +4,7 @@ const Field = props => {
     <>
       <input className={styles.input} 
             type={props.type}
+            required={props.required}
             onChange={props.onChange}
             value={props.value}
             placeholder={props.placeholder}
