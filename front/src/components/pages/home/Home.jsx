@@ -1,13 +1,10 @@
-import {useEffect} from 'react';
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../../hooks/useAuth'
 import { useQuery } from 'react-query'
-import { _api } from '../../../api/axios'
+import { _api } from '../../../api/axios';
+import { Counters, Layout, Button } from '../..';
 
 import bg from '../../../images/home-bg.webp'
-import Button from '../../ui/button/Button'
-import Layout from '../../common/Layout'
-import Counters from '../../common/counters/Counters'
 
 import styles from './home.module.scss'
 const Home = () => {
@@ -29,7 +26,7 @@ const Home = () => {
       <div style={{ backgroundImage: `url(${bg})` }} className={styles.wrapper}>
         <div className={styles.footer}>
           <Link to={isAuth ? '/new-workout' : '/auth'}>
-            <Button>New</Button>
+            <Button className={styles.btn}>New</Button>
           </Link>
           <h1 className={styles.title}>EXERCISES FOR THE SHOULDERS</h1>
           {(isSuccess && isAuth) &&<Counters 

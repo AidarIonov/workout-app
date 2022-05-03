@@ -1,17 +1,14 @@
-import { useState } from 'react'
-import { useMutation } from 'react-query'
-import Layout from '../../common/Layout'
+import { useState } from 'react';
+import { useMutation } from 'react-query';
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../../hooks/useAuth'
+import Layout from '../../common/Layout';
 
-import bg from '../../../images/new-exercise.jpg'
-import Field from '../../ui/field/Field'
-import Button from '../../ui/button/Button'
-import Loader from '../../ui/loader/Loader'
-import Alert from '../../ui/alert/Alert'
+import { Field, Button, Loader, Alert } from '../..';
 
 import styles from './auth.module.scss'
 import { _api } from '../../../api/axios'
-import { useAuth } from '../../../hooks/useAuth'
-import { useNavigate } from 'react-router-dom'
+import bg from '../../../images/new-exercise.jpg'
 
 const Auth = () => {
   const [field, setField] = useState({

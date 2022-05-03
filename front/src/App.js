@@ -1,10 +1,8 @@
-import Home from './components/pages/home/Home';
+
 import { Route, Routes } from 'react-router-dom';
-import NewWorkout from './components/pages/newWorkout/NewWorkout';
-import Auth from './components/pages/authorization/Auth';
 import { routes } from './dataRoutes';
 import { useAuth } from './hooks/useAuth';
-import Error404 from './components/pages/404';
+
 const App = () => {
   const {isAuth} = useAuth();
   return (

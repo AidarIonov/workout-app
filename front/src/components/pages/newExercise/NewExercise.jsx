@@ -1,14 +1,10 @@
-import { useState } from 'react'
-import { useMutation } from 'react-query'
-import Layout from '../../common/Layout'
 import cn from 'classnames'
-import bg from '../../../images/new-exercise.jpg'
-import Field from '../../ui/field/Field'
-import Button from '../../ui/button/Button'
-import Alert from '../../ui/alert/Alert'
-import Loader from '../../ui/loader/Loader'
+import { useState } from 'react';
+import { useMutation } from 'react-query';
+import { Layout, Field, Button, Alert, Loader } from '../..';
 import { _api } from '../../../api/axios'
 
+import bg from '../../../images/new-exercise.jpg'
 import styles from './newExercise.module.scss'
 
 const data = ['chest', 'shoulders', 'legs', 'biceps', 'hit']

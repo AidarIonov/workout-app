@@ -1,4 +1,4 @@
-import Layout from "../common/Layout";
+import { Layout } from '..';
 import bg from '../../images/new-exercise.jpg'
 import { Link } from "react-router-dom";
 const Error404 = () => {
