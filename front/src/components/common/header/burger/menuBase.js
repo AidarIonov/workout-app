@@ -1,14 +1,17 @@
 export const menu = [
   {
     display: 'Workouts',
-    path: '/workouts'
+    path: '/workouts',
+    auth: true
   },
   {
     display: 'Create-new',
-    path: '/new-workout'
+    path: '/new-workout',
+    auth: true
   },
   {
     display: 'Profile',
-    path: '/profile'
+    path: '/profile',
+    auth: true
   },
 ]

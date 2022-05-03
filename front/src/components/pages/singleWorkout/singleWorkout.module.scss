@@ -1,0 +1,34 @@
+@use '../../../scss/' as *;
+
+.wrapper {
+  padding: 20px;
+  ul {
+    margin-top: 50px;
+    li:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    li {
+      a {
+        @include flex(center, space-between);
+        width: 100%;
+        padding: 15px 10px;
+        border-radius: 10px;
+        background-color: $purple;
+        box-shadow: $bx-10;
+        font-size: 24px;
+        line-height: 28px;
+        color: $white;
+      }
+      &.finished {
+        background-color: $dark-purple;
+      }
+    }
+  }
+}
+
+.divider {
+  height: 2px;
+  width: 100%;
+  background-color: $dark-purple;
+  margin-bottom: 30px;
+}

@@ -1,14 +1,15 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useQuery, useMutation } from 'react-query'
-import { _api } from '../../../api/axios'
 import ReactSelect from 'react-select'
-import Layout from '../../common/Layout'
+import { _api } from '../../../api/axios'
 import { Field, Button, Alert, Loader } from '../..'
+import Layout from '../../common/Layout'
 
 import bg from '../../../images/new-workout.jpg'
 
 import styles from './newWorkout.module.scss'
-import { Link } from 'react-router-dom'
+
 const NewWorkout = () => {
   const [name, setName] = useState('')
   const [exercisesIds, setExercisesIds] = useState([])
@@ -37,7 +38,6 @@ const NewWorkout = () => {
       }),
     {
       onSuccess(data) {
-        console.log(data)
         setName('')
         setExercisesIds([])
       },
@@ -56,7 +56,7 @@ const NewWorkout = () => {
   }
 
   return (
-    <Layout background={bg} title={'Create new workout'}>
+    <Layout background={bg} height={'25vh'} title={'Create new workout'}>
       <form onSubmit={handleSubmit} className={styles.form}>
         {error && <Alert type="error">{error}</Alert>}
         {isSuccess && <Alert type="success">Workout has been created</Alert>}
@@ -74,7 +74,7 @@ const NewWorkout = () => {
         {dataFetched && data && (
           <ReactSelect
             classNamePrefix="select2-selection"
-            placeholder="Exercises..."
+            placeholder="Your exercises..."
             title="Exercises"
             options={data.map((ex) => ({
               value: ex._id,

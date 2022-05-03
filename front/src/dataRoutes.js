@@ -1,4 +1,4 @@
-import { NewWorkout, NewExercise, Home, Auth, Error404 } from './components'
+import { NewWorkout, NewExercise, Home, Auth, Error404, Profile, SingleWorkout } from './components'
 export const routes = [
   {
     path: '/',
@@ -22,6 +22,18 @@ export const routes = [
     path: '/new-exercise',
     exact: false,
     component: NewExercise,
+    auth: true,
+  },
+  {
+    path: '/profile',
+    exact: false,
+    component: Profile,
+    auth: true,
+  },
+  {
+    path: '/workouts/:id',
+    exact: false,
+    component: SingleWorkout,
     auth: true,
   },
   {

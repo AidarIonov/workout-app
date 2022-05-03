@@ -2,7 +2,7 @@
 import styles from './counters.module.scss';
 const Counters = props => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${props.className}`}>
         <div className={styles.count}>
           <span>Minutes</span>
           <p>{props.minutes}</p>

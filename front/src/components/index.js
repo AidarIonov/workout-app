@@ -10,3 +10,5 @@ export {default as Alert} from './ui/alert/Alert.jsx';
 export {default as Button} from './ui/button/Button.jsx';
 export {default as Field} from './ui/field/Field.jsx';
 export {default as Loader} from './ui/loader/Loader.jsx';
+export {default as Profile} from './pages/profile/Profile.jsx';
+export {default as SingleWorkout} from './pages/singleWorkout/SingleWorkout.jsx';

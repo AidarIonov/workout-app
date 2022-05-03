@@ -20,7 +20,6 @@ const Home = () => {
       enabled: isAuth
     }
   );
-  console.log(data);
   return (
     <Layout height={0}>
       <div style={{ backgroundImage: `url(${bg})` }} className={styles.wrapper}>

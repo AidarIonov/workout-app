@@ -50,7 +50,7 @@ const NewExercise = () => {
   }
 
   return (
-    <Layout background={bg} title={'Create new exercise'}>
+    <Layout background={bg} height={'25vh'} title={'Create new exercise'}>
       <form onSubmit={handleSubmit} className={styles.form}>
         {error && <Alert type="error">{error}</Alert>}
         {isSuccess && <Alert type="success">Exercise has been created</Alert>}

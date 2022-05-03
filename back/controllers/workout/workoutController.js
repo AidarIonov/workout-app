@@ -26,7 +26,6 @@ export const getWorkout = asyncHandler(async (req, res) => {
 
 
   const minutes = Math.ceil(workout.exercises.length * 3.7);
-  console.log(minutes);
 
   res.json({...workout, minutes});
 });
