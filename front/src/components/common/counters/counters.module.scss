@@ -3,11 +3,13 @@
 
 .wrapper {
   @include flex(center, space-between);
+  flex-wrap: wrap;
   width: 100%;
 }
 
 .count {
   text-align: center;
+  width: 30%;
   span {
     font-weight: 400;
     text-transform: capitalize;

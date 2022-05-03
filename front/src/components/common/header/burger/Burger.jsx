@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import burgerImage from '../../../../images/header/hamburger.svg'
 import burgerCloseImage from '../../../../images/header/hamburger-close.svg'
 
@@ -9,7 +9,7 @@ import { useOutsideAlerter } from '../../../../hooks/useOutsideAlerter';
 import { useAuth } from '../../../../hooks/useAuth';
 const Burger = () => {
   const {setIsAuth} = useAuth()
-
+  const navigate = useNavigate()
   const {ref, isComponentVisible, setIsComponentVisible} =useOutsideAlerter(false);
   const {isAuth} = useAuth();
 
@@ -31,9 +31,15 @@ const Burger = () => {
           <Link to={item.path}>{item.display}</Link>
         </li>
         ))}
+        {isAuth ? (
         <li>
-          <a onClick={handleLogout} href='#'>{isAuth ? 'Logo ut' : 'Login'}</a>
+          <a onClick={handleLogout} href='#'>Logout</a>
         </li>
+        ) : (
+        <li>
+          <Link to='/auth'>Login</Link>
+        </li>
+        )}
       </ul>
     </nav>
     </div>

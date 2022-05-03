@@ -9,7 +9,7 @@ const exerciseSchema = mongoose.Schema({
     type: Number,
     required: true
   },
-  image: {
+  imageName: {
     type: String,
     required: true,
   }

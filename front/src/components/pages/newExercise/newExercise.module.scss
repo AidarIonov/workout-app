@@ -1,0 +1,39 @@
+@use '../../../scss/' as *;
+
+.form {
+  max-width: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  input {
+    margin-bottom: 38px;
+  }
+}
+
+.btn {
+  background-color: $purple;
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 38px;
+}
+
+.images {
+  @include flex(center, space-between);
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .img_wrapper {
+    width: 40px;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+    transition: $transition
+  }
+}
+
+.img_wrapper.active {
+  border-bottom: 1px solid $accent;
+}

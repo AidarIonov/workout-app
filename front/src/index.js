@@ -21,7 +21,7 @@ root.render(
         <AuthContextProvider >
           <App />
         </AuthContextProvider>
-        <ReactQueryDevtoolsPanel initialisopen="false" />
+        {/* <ReactQueryDevtoolsPanel initialisopen="false" /> */}
       </QueryClientProvider>
     </Router>
   </React.StrictMode>

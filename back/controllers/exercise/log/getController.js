@@ -41,7 +41,7 @@ export const getExerciseLogList = asyncHandler(async (req, res) => {
 		user: req.user._id,
 		completed: true,
 	})
-		.populate('exercise', 'name image')
+		.populate('exercise', 'name imageName')
 		.select('exercise createdAt')
 		.lean();
 

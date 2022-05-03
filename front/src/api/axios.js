@@ -33,7 +33,6 @@ export const _api = async ({ url, type = 'GET', auth = true, body }) => {
         data = await axiosClient.delete(url)
         break
     }
-    console.log(data)
     return data.data
   } catch (e) {
     console.log(e)

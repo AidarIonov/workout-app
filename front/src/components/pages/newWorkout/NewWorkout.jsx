@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ReactSelect from 'react-select';
 import Layout from '../../common/Layout';
 
-import bg from '../../../images/new-exercise.jpg'
+import bg from '../../../images/new-workout.jpg'
 import Field from '../../ui/field/Field';
 import Button from '../../ui/button/Button';
 
