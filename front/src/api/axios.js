@@ -26,7 +26,7 @@ export const _api = async ({ url, type = 'GET', auth = true, body }) => {
         break
 
       case 'PUT':
-        data = await axiosClient.PUT(url, body)
+        data = await axiosClient.put(url, body)
         break
 
       case 'DELETE':

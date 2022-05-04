@@ -37,6 +37,10 @@
 	opacity: 1;
 }
 
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 ul {
 	list-style: none;
 }

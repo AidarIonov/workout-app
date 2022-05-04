@@ -28,7 +28,7 @@ const exerciseLogSchema = mongoose.Schema(
     workoutLog: {
       type: ObjectId,
       ref: "WorkoutLog",
-      required: true
+      required: false
     }
   },
   {

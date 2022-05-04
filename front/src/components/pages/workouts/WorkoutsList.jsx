@@ -1,11 +1,12 @@
-import { useQuery } from 'react-query'
+import { useQuery, useMutation } from 'react-query'
 import { Link } from 'react-router-dom'
 import { Alert, Layout } from '../..'
 import { _api } from '../../../api/axios'
 
-import bg from '../../../images/workout-bg.jpg'
+import bg from '../../../images/workout-bg.jpg';
+import removeBtn from '../../../images/header/hamburger-close.svg';
 
-import styles from './singleWorkout.module.scss'
+import styles from './singleWorkout.module.scss';
 
 const WorkoutsList = () => {
 
@@ -18,8 +19,24 @@ const WorkoutsList = () => {
     {
       refetchOnWindowFocus: false
     }
+  );
+
+
+  const { mutate } = useMutation(
+    'delete workout',
+    (id) =>
+      _api({
+        url: '/workouts',
+        type: 'DELETE',
+        body: {
+          workoutId: id
+        },
+      }),
   )
-  console.log(data)
+
+  const removeWorkout = (id) => {
+    mutate(id)
+  }
 
   return (
     <>
@@ -29,6 +46,7 @@ const WorkoutsList = () => {
         title={'Workouts'}
       >
         <div className={styles.wrapper}>
+          
           <ul>
             {isSuccess ? (
               data?.map((item, i) => (
@@ -36,6 +54,7 @@ const WorkoutsList = () => {
                     <Link to={`/workouts/${item._id}`}>
                       {item.name}
                     </Link>
+                    <img onClick={() => removeWorkout(item._id)} className={styles.remove} src={removeBtn} alt="Delete" />
                   </li>
               ))
             ) : (

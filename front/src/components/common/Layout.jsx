@@ -14,6 +14,7 @@ const Layout = (props) => {
       > 
       <div className={styles.text}>
         <span>{props.minutes && `${props.minutes}min`}</span>
+        {props.exerciseImage && <img src={props.exerciseImage} alt='Exercise logo' draggable={false} />}
         <h1>{props.title}</h1>
       </div>
       </div>

@@ -1,5 +1,15 @@
-import { NewWorkout, NewExercise, Home, Auth, Error404, Profile, SingleWorkout } from './components'
-import WorkoutsList from './components/pages/workouts/WorkoutsList'
+import {
+  NewWorkout,
+  NewExercise,
+  Home,
+  Auth,
+  Error404,
+  Profile,
+  SingleWorkout,
+  WorkoutsList,
+  SingleExercise
+} from './components';
+
 export const routes = [
   {
     path: '/',
@@ -41,6 +51,12 @@ export const routes = [
     path: '/workouts',
     exact: false,
     component: WorkoutsList,
+    auth: true,
+  },
+  {
+    path: '/exercise/:id',
+    exact: false,
+    component: SingleExercise,
     auth: true,
   },
   {

@@ -12,3 +12,5 @@ export {default as Field} from './ui/field/Field.jsx';
 export {default as Loader} from './ui/loader/Loader.jsx';
 export {default as Profile} from './pages/profile/Profile.jsx';
 export {default as SingleWorkout} from './pages/workouts/SingleWorkout.jsx';
+export {default as WorkoutsList} from './pages/workouts/WorkoutsList.jsx';
+export {default as SingleExercise} from './pages/exercises/SingleExercise.jsx';

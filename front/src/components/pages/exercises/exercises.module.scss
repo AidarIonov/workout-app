@@ -1,0 +1,53 @@
+@use '../../../scss/' as *;
+
+.wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  table {
+    background-color: $dark-purple;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    th:not(:last-child) {
+      border-right: 1px solid $purple;
+    }
+    th {
+      font-size: 19px;
+      border-bottom: 1px solid $purple;
+      font-weight: 600;
+      padding: 15px;
+    }
+    td:not(:last-child) {
+      border-right: 1px solid $purple;
+    }
+    td {
+      padding: 15px;
+      font-size: 18px;
+      transition: $transition; 
+      text-align: center;
+      input {
+        background-color: transparent;
+        transition: $transition;
+        color: $white;
+        border: none;
+        width: 15px;
+        font-size: 18px;
+      }
+    }
+    tr.completed {
+        text-decoration: line-through;
+        color: $accent;
+        opacity: .5;
+        input {
+          color: $accent;
+        }
+    }
+  }
+}
+
+.checked {
+  cursor: pointer;
+}

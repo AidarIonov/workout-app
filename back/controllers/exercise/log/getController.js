@@ -7,7 +7,7 @@ import { reBuildTimes } from '../../../helpers/exerciseLog.js'
 //@route GET api/exercises/log/:id
 export const getExerciseLog = asyncHandler(async (req, res) => {
   const exerciseLog = await ExerciseLog.findById(req.params.id)
-    .populate('exercise', 'name imageId')
+    .populate('exercise', 'name imageName')
     .lean()
 
   if (!exerciseLog) {
