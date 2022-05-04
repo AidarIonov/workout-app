@@ -1,5 +1,10 @@
 export const menu = [
   {
+    display: 'Home',
+    path: '/',
+    auth: false
+  },
+  {
     display: 'Workouts',
     path: '/workouts',
     auth: true

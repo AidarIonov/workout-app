@@ -1,4 +1,4 @@
-import {Fragment} from 'react'
+import { Fragment } from 'react'
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
@@ -21,7 +21,7 @@ const SingleWorkout = () => {
       }),
     {
       refetchOnWindowFocus: false,
-      enabled: isAuth
+      enabled: isAuth,
     }
   )
   console.log(data)
@@ -39,16 +39,17 @@ const SingleWorkout = () => {
             {isSuccess ? (
               data?.exercises.map((item, i) => (
                 <Fragment key={item._id}>
-                <li>
-                  <Link to={`/exercises/${item._id}`}>
+                  <li>
+                    <Link to={`/exercises/${item._id}`}>
                       {item.name}
-                    <img
-                      width={30}
-                      src={`/uploads/exercises/${item.imageName}.svg`}
-                      alt={item.imageName}
-                    />
-                  </Link>
-                </li>
+                      <img
+                        draggable={false}
+                        width={30}
+                        src={`/uploads/exercises/${item.imageName}.svg`}
+                        alt={item.imageName}
+                      />
+                    </Link>
+                  </li>
                   {i % 2 !== 0 && <div className={styles.divider}></div>}
                 </Fragment>
               ))

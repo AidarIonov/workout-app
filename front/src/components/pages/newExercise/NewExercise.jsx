@@ -82,6 +82,7 @@ const NewExercise = () => {
                 onClick={() => setImageName(name)}
                 src={`/uploads/exercises/${name}.svg`}
                 alt={`${name}`}
+                draggable={false}
               />
             </div>
           ))}

@@ -18,11 +18,11 @@ const Header = props => {
     <header className={styles.header}>
       {pathname !== '/' ? (
         <button onClick={() => navigate(-1)} className={styles.btn} type="button">
-          <img src={arrowImage} alt="Auth" />
+          <img src={arrowImage} alt="Auth" draggable={false} />
         </button>
       ) : (
         <button onClick={() => navigate(isAuth ? '/profile' : '/auth')} className={styles.btn} type="button">
-          <img src={isAuth ? authImage : userImage} alt="Auth" height='40' />
+          <img draggable={false} src={isAuth ? authImage : userImage} alt="Auth" height='40' />
         </button>
       )}
       <Burger />

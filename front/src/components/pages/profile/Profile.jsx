@@ -38,7 +38,7 @@ const Profile = () => {
         >
           <div className={styles.user}>
             <div className={styles.image}>
-              <img src={userLogo} alt="User" />
+              <img src={userLogo} alt="User" draggable={false}/>
             </div>
             <h3>{data?.email}</h3>
           </div>
@@ -55,11 +55,11 @@ const Profile = () => {
           <div className={styles.before_after}>
             <div>
               <h3>Before</h3>
-              <img src={after} alt="Before" />
+              <img src={after} alt="Before" draggable={false}/>
             </div>
             <div>
               <h3>After</h3>
-              <img src={after} alt="After" />
+              <img src={after} alt="After" draggable={false}/>
             </div>
           </div>
         </div>

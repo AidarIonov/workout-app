@@ -28,6 +28,7 @@ const Burger = () => {
         <img
           src={isComponentVisible ? burgerCloseImage : burgerImage}
           alt="Auth"
+          draggable={false}
         />
       </button>
       <nav
